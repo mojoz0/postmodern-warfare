@@ -1,0 +1,288 @@
+fileFormatVersion: 2
+guid: 22b120de11a6849538abf523c1722f65
+timeCreated: 1456289529
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Dog Squishing_0
+    21300002: Dog Squishing_1
+    21300004: Dog Squishing_2
+    21300006: Dog Squishing_3
+    21300008: Dog Squishing_4
+    21300010: Dog Squishing_5
+    21300012: Dog Squishing_6
+    21300014: Dog Squishing_7
+    21300016: Dog Squishing_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Dog Squishing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 113, y: 84}
+        - {x: 76, y: 103}
+        - {x: 22, y: 116}
+        - {x: -41, y: 116}
+        - {x: -82, y: 105}
+        - {x: -95, y: 88}
+        - {x: -105, y: 47}
+        - {x: -110, y: 17}
+        - {x: -113, y: -14}
+        - {x: -121, y: -36}
+        - {x: -121, y: -85}
+        - {x: -58, y: -109}
+        - {x: -25, y: -115}
+        - {x: 30, y: -115}
+        - {x: 73, y: -108}
+        - {x: 93, y: -89}
+        - {x: 117, y: -24}
+        - {x: 117, y: 46}
+    - name: Dog Squishing_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 600
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 120, y: 21}
+        - {x: 116, y: 53}
+        - {x: 98, y: 76}
+        - {x: 27, y: 97}
+        - {x: -45, y: 97}
+        - {x: -58, y: 96}
+        - {x: -92, y: 86}
+        - {x: -118, y: 32}
+        - {x: -123, y: -26}
+        - {x: -110, y: -47}
+        - {x: -128, y: -51}
+        - {x: -128, y: -85}
+        - {x: -43, y: -117}
+        - {x: 56, y: -117}
+        - {x: 76, y: -114}
+        - {x: 97, y: -93}
+        - {x: 95, y: -39}
+        - {x: 120, y: -18}
+    - name: Dog Squishing_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111, y: 34}
+        - {x: 70, y: 55}
+        - {x: 40, y: 65}
+        - {x: -62, y: 65}
+        - {x: -83, y: 57}
+        - {x: -100, y: 44}
+        - {x: -121, y: -4}
+        - {x: -129, y: -42}
+        - {x: -129, y: -87}
+        - {x: -110, y: -99}
+        - {x: -26, y: -120}
+        - {x: 34, y: -120}
+        - {x: 74, y: -116}
+        - {x: 94, y: -101}
+        - {x: 119, y: -42}
+        - {x: 119, y: -7}
+    - name: Dog Squishing_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 114, y: 26}
+        - {x: 96, y: 36}
+        - {x: 41, y: 54}
+        - {x: -92, y: 54}
+        - {x: -126, y: -20}
+        - {x: -127, y: -25}
+        - {x: -127, y: -88}
+        - {x: -124, y: -96}
+        - {x: -44, y: -117}
+        - {x: -21, y: -121}
+        - {x: 47, y: -121}
+        - {x: 71, y: -120}
+        - {x: 100, y: -102}
+        - {x: 123, y: -52}
+        - {x: 123, y: -11}
+    - name: Dog Squishing_4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101, y: 14}
+        - {x: 54, y: 30}
+        - {x: -98, y: 30}
+        - {x: -123, y: -28}
+        - {x: -126, y: -63}
+        - {x: -130, y: -76}
+        - {x: -130, y: -100}
+        - {x: -125, y: -106}
+        - {x: -35, y: -127}
+        - {x: 58, y: -127}
+        - {x: 101, y: -111}
+        - {x: 122, y: -57}
+        - {x: 122, y: -18}
+    - name: Dog Squishing_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 124, y: -6}
+        - {x: 51, y: 17}
+        - {x: -64, y: 17}
+        - {x: -83, y: 15}
+        - {x: -103, y: -3}
+        - {x: -126, y: -67}
+        - {x: -126, y: -100}
+        - {x: -84, y: -117}
+        - {x: -29, y: -123}
+        - {x: 38, y: -123}
+        - {x: 77, y: -121}
+        - {x: 101, y: -107}
+        - {x: 124, y: -70}
+    - name: Dog Squishing_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 110, y: -2}
+        - {x: 59, y: 10}
+        - {x: -81, y: 10}
+        - {x: -100, y: -11}
+        - {x: -124, y: -67}
+        - {x: -124, y: -105}
+        - {x: -81, y: -123}
+        - {x: -23, y: -128}
+        - {x: 75, y: -128}
+        - {x: 99, y: -122}
+        - {x: 130, y: -63}
+        - {x: 130, y: -32}
+    - name: Dog Squishing_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -96, y: -14}
+        - {x: -107, y: -16}
+        - {x: -132, y: -72}
+        - {x: -135, y: -81}
+        - {x: -135, y: -103}
+        - {x: -111, y: -115}
+        - {x: -100, y: -123}
+        - {x: 134, y: -123}
+        - {x: 134, y: -31}
+        - {x: 85, y: -14}
+    - name: Dog Squishing_8
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59, y: -33}
+        - {x: -108, y: -33}
+        - {x: -144, y: -84}
+        - {x: -144, y: -125}
+        - {x: 117, y: -125}
+        - {x: 134, y: -105}
+        - {x: 134, y: -56}
+        - {x: 124, y: -38}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
