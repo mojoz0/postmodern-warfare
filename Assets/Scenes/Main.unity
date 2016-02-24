@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedForce: 200
   maxSpeed: 6
-  jumpForce: 500
+  jumpForce: 450
   grounded: 0
 --- !u!1 &1954020141
 GameObject:

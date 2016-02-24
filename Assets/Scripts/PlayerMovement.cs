@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpForce = 150f;
 
 	public bool grounded;
+	public bool squishing;
 
 	private Rigidbody2D rb2d;
 	private Animator anim;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		anim.SetBool ("Grounded", grounded);
 		anim.SetFloat ("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+		anim.SetBool ("Squishing", Input.GetButton("Squish"));
 
 
 		/* Get Player to face correct direction */
@@ -35,9 +37,10 @@ public class PlayerMovement : MonoBehaviour {
 			transform.localScale = new Vector3 (-1, 1, 1);
 		}
 
-		if (Input.GetButtonDown ("Jump")) {
+		if (Input.GetButtonDown ("Jump") && grounded) {
 			rb2d.AddForce (Vector2.up * jumpForce);
 		}
+			
 
 	}
 
