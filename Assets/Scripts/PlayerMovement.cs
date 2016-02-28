@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour {
 
+	float delay = 0.4f;
 	public float speedForce = 50f;
 	public float maxSpeed = 10f;
 	public float jumpForce = 150f;
@@ -23,6 +25,14 @@ public class PlayerMovement : MonoBehaviour {
 	Animator anim;
 
 	public bool HasGun {get;set;}
+
+	public bool IsFacingForward {
+		get { return isFacingForward; }
+		set { isFacingForward = value;
+			transform.localScale = (isFacingForward)
+				? new Vector3(1,1,1) : new Vector3(-1,1,1);
+		}
+	} bool isFacingForward;
 
 	public float Radius { get { return 2f; } }
 
@@ -46,33 +56,36 @@ public class PlayerMovement : MonoBehaviour {
 		anim.SetBool("Squishing", Input.GetButton("Squish"));
 
 		/* Get Player to face correct direction */
-		if (Input.GetAxis ("Horizontal") > 0.1f)
-			transform.localScale = new Vector3 (1, 1, 1);
-		else if (Input.GetAxis ("Horizontal") < -0.1f)
-			transform.localScale = new Vector3 (-1, 1, 1);
-		if (Input.GetButtonDown ("Jump") && grounded)
-			rb2d.AddForce (Vector2.up * jumpForce);
+		if (Input.GetAxis("Horizontal")>0.1f)
+			IsFacingForward = true;
+		else if (Input.GetAxis("Horizontal")<-0.1f)
+			IsFacingForward = false;
+		if (Input.GetButtonDown("Jump") && grounded)
+			rb2d.AddForce(Vector2.up * jumpForce);
 		if (Input.GetButtonDown("Throw")) {
 			if (HasGun) ThrowGun();
 			else GetGun();
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D c) {
-		if (!c.rigidbody || c.rigidbody.tag!="Gun") return;
-		potentialGun = c.rigidbody.gameObject;
-		//GetGun(c.rigidbody.gameObject);
+	void OnTriggerEnter2D(Collider2D c) {
+		if (!c.GetComponent<Rigidbody2D>() || c.GetComponent<Rigidbody2D>().tag!="Gun") return;
+		potentialGun = c.GetComponent<Rigidbody2D>().gameObject;
 	}
 
 	void ThrowGun() {
 		gun.GetComponent<Gun2D>().IsHeld = false;
+		gun.GetComponent<Gun2D>().DisableCollisions(delay);
+		var pos = gun.transform.position;
 		gun.transform.parent = null;
+		gun.transform.position = pos;
 		HasGun = false;
+		var force = gun.GetComponent<Gun2D>().force;
 		gun.GetComponent<Rigidbody2D>().AddForce(
-			transform.forward*300f, ForceMode2D.Impulse);
-		gun.GetComponent<Rigidbody2D>().AddRelativeForce(
-			Vector2.right*100f, ForceMode2D.Impulse);
-		gun.GetComponent<Rigidbody2D>().AddTorque(1200f);
+			((IsFacingForward)?1:-1)*transform.right*force);//, ForceMode2D.Impulse);
+		//gun.GetComponent<Rigidbody2D>().AddRelativeForce(
+		//	Vector2.right*100f, ForceMode2D.Impulse);
+		gun.GetComponent<Rigidbody2D>().AddTorque(600f);
 	}
 
 
@@ -90,6 +103,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	void FixedUpdate() {
+#if OLD
         var nearby = Physics.OverlapSphere(
             transform.position, Radius);//, layerMask,
             //QueryTriggerInteraction.Collide);
@@ -98,11 +112,11 @@ public class PlayerMovement : MonoBehaviour {
                 ?? elem.gameObject.GetComponent<Gun2D>();
             if (o==null) continue;
         }
-
+#endif
 
 		/* Moving the player */
-		float h = Input.GetAxis ("Horizontal");
-		rb2d.AddForce ((Vector2.right * speedForce) * h);
+		float h = Input.GetAxis("Horizontal");
+		rb2d.AddForce((Vector2.right * speedForce) * h);
 
 		/* Limiting speed of Player */
 		if (rb2d.velocity.x > maxSpeed)
