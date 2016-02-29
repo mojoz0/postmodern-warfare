@@ -28,34 +28,19 @@ class Gun2D : MonoBehaviour {
 		}
 	} bool isHeld;
 
+
 	void Start() {
 		collidersEnabled = true;
 		foreach (Transform child in transform)
 			child.gameObject.tag = gunTag;
 	}
 
+	void FixedUpdate() { transform.localScale = new Vector3(scale,scale,scale); }
 
-	void FixedUpdate() {
-		transform.localScale = new Vector3(scale,scale,scale);
-	}
-
-	public void DisableCollisions(float delay) {
-		StartCoroutine(DisablingCollisions(delay));
-	}
-
-	IEnumerator DisablingCollisions(float delay) {
-		if (wait) yield break;
-		wait = true;
-		collidersEnabled = false;
-		yield return new WaitForSeconds(delay);
-		collidersEnabled = true;
-		wait = false;
-	}
-
-	void OnCollision2D(Collider c) {
-		var other = c.GetComponent<IDamageable>();
-		if (other==null) return;
-		other.Apply(damage);
+	void OnCollisionEnter2D(Collision2D c) {
+		if (!c.rigidbody) return;
+		var other = c.rigidbody.GetComponent<IDamageable>();
+		if (other!=null) other.Apply(damage);
 	}
 }
 
