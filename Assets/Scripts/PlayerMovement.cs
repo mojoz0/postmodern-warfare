@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void FixedUpdate() {
 		GetComponent<BoxCollider2D>().size = new Vector2(
-			(IsStretching)?(0.5f):(2f), (IsSquishing)?(0.5f):(2f));
+			(IsStretching)?(.944f):(2f), (IsSquishing)?(0.5f):(2f));
 		GetComponent<BoxCollider2D>().offset = new Vector2(
 			0, (IsSquishing)?(-0.65f):(0.1f));
 		float h = Input.GetAxis("Horizontal");
