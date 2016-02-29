@@ -6,8 +6,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour {
 
-	public bool grounded;
-	public bool squishing;
+	public float speed;
 	public float speedForce = 50f;
 	public float maxSpeed = 10f;
 	public float jumpForce = 150f;
@@ -19,10 +18,10 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	public bool HasGun {get;set;}
-
+	public bool IsGrounded {get;set;}
 	public bool IsJumping {get;set;}
-
 	public bool IsSquishing {get;set;}
+	public bool IsStretching {get;set;}
 
 	public bool IsFacingForward {
 		get { return isFacingForward; }
@@ -47,19 +46,22 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update() {
 		IsSquishing = Input.GetButton("Squish");
-
+		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
+		speed = Input.GetAxis("Horizontal");
 	}
 
+
 	void LateUpdate() {
-		anim.SetBool("Grounded", grounded);
-		anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+		anim.SetBool("Grounded", IsGrounded);
 		anim.SetBool("Squishing", IsSquishing);
+		anim.SetBool("Stretching", IsStretching);
+		anim.SetFloat("Speed", Mathf.Abs(speed));
 		/* Get Player to face correct direction */
 		if (Input.GetAxis("Horizontal")>0.1f)
 			IsFacingForward = true;
 		else if (Input.GetAxis("Horizontal")<-0.1f)
 			IsFacingForward = false;
-		if (Input.GetButtonDown("Jump") && grounded)
+		if (Input.GetButtonDown("Jump") && IsGrounded)
 			IsJumping = true;
 		if (Input.GetButtonDown("Throw")) {
 			if (HasGun) ThrowGun();
@@ -104,7 +106,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void FixedUpdate() {
 		GetComponent<BoxCollider2D>().size = new Vector2(
-			2f, (IsSquishing)?(0.5f):(2f));
+			(IsStretching)?(0.5f):(2f), (IsSquishing)?(0.5f):(2f));
 		GetComponent<BoxCollider2D>().offset = new Vector2(
 			0, (IsSquishing)?(-0.65f):(0.1f));
 		float h = Input.GetAxis("Horizontal");
