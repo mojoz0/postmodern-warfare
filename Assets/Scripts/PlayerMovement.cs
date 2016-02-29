@@ -103,6 +103,8 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate() {
 		GetComponent<BoxCollider2D>().size = new Vector2(
 			2f, (IsSquishing)?(0.5f):(2f));
+		GetComponent<BoxCollider2D>().offset = new Vector2(
+			0, (IsSquishing)?(-0.65f):(0.1f));
 		if (potentialGun && potentialGun.transform.parent==this.transform)
 			potentialGun.transform.localPosition = Vector3.zero;
 		float h = Input.GetAxis("Horizontal");
