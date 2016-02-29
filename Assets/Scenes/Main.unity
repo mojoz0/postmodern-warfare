@@ -3449,7 +3449,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 4.5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 0
@@ -3467,9 +3467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  speedForce: 100
-  maxSpeed: 15
-  jumpForce: 900
+  speedForce: 110
+  maxSpeed: 16
+  jumpForce: 1200
   potentialGun: {fileID: 0}
   layerMask:
     serializedVersion: 2
