@@ -49,15 +49,20 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Update() {
+		var wasSquishing = IsSquishing;
+		var wasStretchng = IsStretching;
+
 		IsSquishing = Input.GetButton("Squish");
 		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
 
-		if (IsSquishing) {
-			audio.PlayOneShot (squishSound, 1f);
-
-		} else if (IsStretching) {
-			audio.PlayOneShot (stretchSound, 1f);
+		if (IsSquishing && !wasSquishing) {
+			audio.PlayOneShot (squishSound, .8f);
+		} else if (IsStretching && !wasStretchng) {
+			audio.PlayOneShot (stretchSound, .8f);
 		}
+
+		IsSquishing = Input.GetButton("Squish");
+		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
 
 		speed = Input.GetAxis("Horizontal");
 	}
