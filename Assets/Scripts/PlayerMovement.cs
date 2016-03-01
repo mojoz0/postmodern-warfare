@@ -12,9 +12,12 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpForce = 150f;
 	Rigidbody2D rb2d;
 	Animator anim;
+	AudioSource audio;
 	public GameObject potentialGun;
 	public LayerMask layerMask;
 	public GameObject gun;
+	public AudioClip stretchSound;
+	public AudioClip squishSound;
 
 
 	public bool HasGun {get;set;}
@@ -42,11 +45,20 @@ public class PlayerMovement : MonoBehaviour {
 	void Start() {
 		rb2d = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator>();
+		audio = GetComponent<AudioSource>();
 	}
 
 	void Update() {
 		IsSquishing = Input.GetButton("Squish");
 		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
+
+		if (IsSquishing) {
+			audio.PlayOneShot (squishSound, 1f);
+
+		} else if (IsStretching) {
+			audio.PlayOneShot (stretchSound, 1f);
+		}
+
 		speed = Input.GetAxis("Horizontal");
 	}
 
