@@ -7,7 +7,7 @@ public class Narration : MonoBehaviour {
 
 	string initMessageName = "init";
 
-	public ui::Text text;
+	ui::Text text;
 	public Message message;
 
 
