@@ -13,15 +13,24 @@ class Baddie : MonoBehaviour, IDamageable {
 	public bool isAlive;
 
 	public GameObject explosion;
-	public GameObject fireChoco;
+	public GameObject deadReplacement;
 
 	public UnityEvent m_ClickEvent;
 
 	public void Click() {
 		isAlive = !isAlive;
-		if (!explosion) return;
-		Object.Instantiate(explosion,transform.position,Quaternion.identity);
-		explosion = null;
+		if (explosion) {
+			Object.Instantiate(explosion,transform.position,Quaternion.identity);
+			explosion = null;
+		}
+
+		GameObject temp;
+		if (deadReplacement) {
+			temp = Object.Instantiate(deadReplacement,transform.position,Quaternion.identity) as GameObject;
+			foreach (var rb in temp.GetComponentsInChildren<Rigidbody2D>())
+				rb.AddExplosionForce(4000f, transform.position,400f,200);
+		}
+		Destroy(gameObject);
 	}
 
 	/* This kills the crab */
@@ -32,8 +41,8 @@ class Baddie : MonoBehaviour, IDamageable {
 
 	public void Apply(float damage) {
 		if (damage > 0) {
-			m_ClickEvent.Invoke ();
-			Die (); 
+			m_ClickEvent.Invoke();
+			Die();
 		}
 	}
 
@@ -46,3 +55,20 @@ class Baddie : MonoBehaviour, IDamageable {
 		m_ClickEvent.AddListener(Click);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
