@@ -5,21 +5,22 @@ public class GroundCheck : MonoBehaviour {
 
 	private PlayerMovement player;
 
-
-	// Use this for initialization
-	void Start () {
-		player = gameObject.GetComponentInParent<PlayerMovement> ();
-	}
-	
-	void OnTriggerEnter2D (Collider2D col) {
-		player.grounded = true;
+	void Start() {
+		player = gameObject.GetComponentInParent<PlayerMovement>();
 	}
 
-	void OnTriggerStay2D (Collider2D col) {
-		player.grounded = true;
+	void OnTriggerEnter2D(Collider2D c) {
+		if (c.isTrigger) return;
+		player.IsGrounded = true;
 	}
 
-	void OnTriggerExit2D (Collider2D col) {
-		player.grounded = false;
+	void OnTriggerStay2D(Collider2D c) {
+		if (c.isTrigger) return;
+		player.IsGrounded = true;
+	}
+
+	void OnTriggerExit2D(Collider2D c) {
+		if (c.isTrigger) return;
+		player.IsGrounded = false;
 	}
 }

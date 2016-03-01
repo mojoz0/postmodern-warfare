@@ -6,8 +6,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour {
 
-	public bool grounded;
-	public bool squishing;
+	public float speed;
 	public float speedForce = 50f;
 	public float maxSpeed = 10f;
 	public float jumpForce = 150f;
@@ -19,8 +18,10 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	public bool HasGun {get;set;}
-
+	public bool IsGrounded {get;set;}
+	public bool IsJumping {get;set;}
 	public bool IsSquishing {get;set;}
+	public bool IsStretching {get;set;}
 
 	public bool IsFacingForward {
 		get { return isFacingForward; }
@@ -45,20 +46,23 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update() {
 		IsSquishing = Input.GetButton("Squish");
-
+		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
+		speed = Input.GetAxis("Horizontal");
 	}
 
+
 	void LateUpdate() {
-		anim.SetBool("Grounded", grounded);
-		anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+		anim.SetBool("Grounded", IsGrounded);
 		anim.SetBool("Squishing", IsSquishing);
+		anim.SetBool("Stretching", IsStretching);
+		anim.SetFloat("Speed", Mathf.Abs(speed));
 		/* Get Player to face correct direction */
 		if (Input.GetAxis("Horizontal")>0.1f)
 			IsFacingForward = true;
 		else if (Input.GetAxis("Horizontal")<-0.1f)
 			IsFacingForward = false;
-		if (Input.GetButtonDown("Jump") && grounded)
-			rb2d.AddForce(Vector2.up * jumpForce);
+		if (Input.GetButtonDown("Jump") && IsGrounded)
+			IsJumping = true;
 		if (Input.GetButtonDown("Throw")) {
 			if (HasGun) ThrowGun();
 			else GetGun();
@@ -93,8 +97,8 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void GetGun(GameObject gun) {
-		gun.transform.parent = this.transform;
-		gun.transform.localPosition = Vector3.zero;
+		gun.transform.parent = transform;
+		//gun.transform.localPosition = Vector3.zero;
 		HasGun = true;
         gun.GetComponent<Gun2D>().IsHeld = true;
         this.gun = gun;
@@ -102,16 +106,19 @@ public class PlayerMovement : MonoBehaviour {
 
 	void FixedUpdate() {
 		GetComponent<BoxCollider2D>().size = new Vector2(
-			2f, (IsSquishing)?(0.5f):(2f));
+			(IsStretching)?(.944f):(2f), (IsSquishing)?(0.5f):(2f));
 		GetComponent<BoxCollider2D>().offset = new Vector2(
 			0, (IsSquishing)?(-0.65f):(0.1f));
-		if (potentialGun && potentialGun.transform.parent==this.transform)
-			potentialGun.transform.localPosition = Vector3.zero;
 		float h = Input.GetAxis("Horizontal");
 		rb2d.AddForce((Vector2.right*speedForce)*h);
 		if (rb2d.velocity.x > maxSpeed)
 			rb2d.velocity = new Vector2(maxSpeed, rb2d.velocity.y);
 		else if (rb2d.velocity.x<-maxSpeed)
 			rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
+		if (IsJumping) {
+			rb2d.AddForce(Vector2.up * jumpForce);
+			IsJumping = false;
+		} if (gun && gun.transform.parent==transform)
+			gun.transform.localPosition = Vector3.zero;
 	}
 }
