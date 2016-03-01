@@ -13,6 +13,7 @@ class Baddie : MonoBehaviour, IDamageable {
 	public bool isAlive;
 
 	public GameObject explosion;
+	public GameObject fireChoco;
 
 	public UnityEvent m_ClickEvent;
 
