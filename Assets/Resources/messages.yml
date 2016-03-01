@@ -1,0 +1,25 @@
+%YAML 1.1
+---
+
+
+init: !!message
+  title: My Message
+  delay: 20.0
+  trigger: Time
+  desc: |
+    **Welcome to MallowDog 3 : Postmodern Warfare!**
+    If this is your first time playing, press **TAB** and then type **help** for more information. 
+    If you just want to explore, press **TAB** and type **hide terminal**.
+
+
+dead: !!message
+  desc: |
+    ### \*\*\* YOU HAVE DIED. \*\*\* ###
+    **Would you like to Restore, Restart, or Quit?**
+
+
+dumb: !!message
+  desc: |
+   (Continuing to do whatever it is you're doing is unlikely to advance your cause in any way.)
+
+...
