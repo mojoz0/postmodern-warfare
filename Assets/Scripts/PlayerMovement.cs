@@ -6,6 +6,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour {
 
+	bool wait;
 	public float speed;
 	public float speedForce = 50f;
 	public float maxSpeed = 10f;
@@ -46,6 +47,16 @@ public class PlayerMovement : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator>();
 	}
 
+
+	IEnumerator PlayingSound(AudioClip clip,float volume) {
+		if (wait) yield break;
+		wait = true;
+		GetComponent<AudioSource>().PlayOneShot(clip, volume);
+		yield return new WaitForSeconds(clip.length);
+		wait = false;
+	}
+
+
 	void Update() {
 		var wasSquishing = IsSquishing;
 		var wasStretching = IsStretching;
@@ -54,9 +65,9 @@ public class PlayerMovement : MonoBehaviour {
 		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
 
 		if (IsSquishing && !wasSquishing)
-			GetComponent<AudioSource>().PlayOneShot(squishSound, 0.8f);
+			StartCoroutine(PlayingSound(squishSound,0.8f));
 		else if (IsStretching && !wasStretching)
-			GetComponent<AudioSource>().PlayOneShot(stretchSound, 0.8f);
+			StartCoroutine(PlayingSound(stretchSound,0.8f));
 
 		IsSquishing = Input.GetButton("Squish");
 		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
