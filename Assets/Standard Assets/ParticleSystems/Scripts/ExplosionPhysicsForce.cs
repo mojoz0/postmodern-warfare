@@ -19,8 +19,8 @@ namespace UnityStandardAssets.Effects
             float multiplier = GetComponent<ParticleSystemMultiplier>().multiplier;
 
             float r = 10*multiplier;
-            var cols = Physics.OverlapSphere(transform.position, r);
-            var rigidbodies = new List<Rigidbody>();
+            var cols = Physics2D.OverlapCircleAll(transform.position, r);
+            var rigidbodies = new List<Rigidbody2D>();
             foreach (var col in cols)
             {
                 if (col.attachedRigidbody != null && !rigidbodies.Contains(col.attachedRigidbody))
@@ -30,7 +30,7 @@ namespace UnityStandardAssets.Effects
             }
             foreach (var rb in rigidbodies)
             {
-                rb.AddExplosionForce(explosionForce*multiplier, transform.position, r, 1*multiplier, ForceMode.Impulse);
+                rb.AddExplosionForce(explosionForce*multiplier, transform.position,r,1*multiplier);
             }
         }
     }
