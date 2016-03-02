@@ -2,24 +2,86 @@
 ---
 
 
-init: !!message
-  title: My Message
-  delay: 20.0
-  trigger: Time
-  desc: |
-    **Welcome to MallowDog 3 : Postmodern Warfare!**
-    If this is your first time playing, press **TAB** and then type **help** for more information. 
-    If you just want to explore, press **TAB** and type **hide terminal**.
-
 
 dead: !!message
   desc: |
     ### \*\*\* YOU HAVE DIED. \*\*\* ###
     **Would you like to Restore, Restart, or Quit?**
 
-
 dumb: !!message
   desc: |
    (Continuing to do whatever it is you're doing is unlikely to advance your cause in any way.)
 
-...
+init: !!message
+  trigger: Time
+  desc: >
+    This is **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>**. **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>** is full of unfamiliar things. 
+    See? There’s something on the ground. I bet you can **<red>P</red><orange>I</orange><yellow>C</yellow><green>K</green> <red>I</red><orange>T</orange> <yellow>U</yellow><green>P</green>**. 
+    Try pressing **k** .
+
+narrator_2: !!message
+  trigger: Event
+  desc: >
+    Spectacular! You picked it up. 
+    My studies of **EARTH** have informed me that the thing you picked up is called a **GUN**. 
+    It is a **WEAPON** used to **HURT THINGS**. 
+    Why don’t you give it a go? Press **K**.
+
+narrator_3: !!message
+  trigger: Event
+  desc: >
+    Wonderful! Now why don’t you hold on to that. 
+    My **INSTINCTS** tell me you might need it later.
+
+narrator_4: !!message
+  trigger: Event
+  desc: >
+    **EARTH** is also full of **STRANGE NOOKS AND CRANNIES**. 
+    My studies of **EARTH** have taught me that these are **VERY ANNOYING** for **HUMANS**. 
+    But since you are a marshmallow, you should have **NO PROBLEMO**!
+    Just **SQUISH YOURSELF**. Press the **DOWN ARROW**.
+
+narrator_5: !!message
+  trigger: Event
+  next: narrator_6
+  delay: 10
+  desc: |
+    Now you are **VERY SMALL**... **HEIGHTWISE**.
+
+narrator_6: !!message
+  trigger: Time
+  desc: |
+    Try the **UP ARROW**.
+
+narrator_7: !!message
+  trigger: Event
+  next: narrator_8
+  desc: >
+    Now you are **VERY SKINNY**. 
+    You should be able to fit into any **NOOK** or **CRANNY** you want. Groovy...!
+    That is an **EARTH WORD** that I learned while studying **EARTH**.
+
+narrator_8: !!message
+  trigger: Time
+  desc: >
+    The creatures who live on this planet also have an **ODD PROPENSITY** to **PUZZLES**. 
+    These **PUZZLES** are **ANNOYING** and I **DISLIKE** them. 
+    You will have to **SOLVE** them **SOMETIMES**. Solve this one!
+
+narrator_9: !!message
+  trigger: Event
+  desc: >
+    ...Radical! That is another **EARTH EXPRESSION**. OK.
+    Now you are going to have to **HURT** that **GUARD** with your **GUN**. Do it!
+
+narrator_10: !!message
+  trigger: Event
+  desc: |
+    ...**NAILED IT**! It looks like he was guarding a part of your ship. Go get it!
+
+narrator_11: !!message
+  trigger: Event
+  desc: |
+    **GOOD**. Now I am going to **LEAVE YOU TO YOUR BUSINESS**. Good luck. Try not to die. 
+
+
