@@ -15,9 +15,9 @@ dumb: !!message
 init: !!message
   trigger: Time
   desc: >
-    This is **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>**. **EARTH** is full of unfamiliar things. 
-    See? There’s something on the ground. I bet you can **PICK IT UP**. 
-    Try pressing **K**.
+    This is **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>**. **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>** is full of unfamiliar things. 
+    See? There’s something on the ground. I bet you can **<red>P</red><orange>I</orange><yellow>C</yellow><green>K</green> <red>I</red><orange>T</orange> <yellow>U</yellow><green>P</green>**. 
+    Try pressing **k** .
 
 narrator_2: !!message
   trigger: Event
