@@ -15,28 +15,28 @@ dumb: !!message
 init: !!message
   trigger: Time
   desc: >
-    This is **EARTH**. **EARTH** is full of unfamiliar things. 
-    See? There’s something on the ground. I bet you can **PICK IT UP**. 
+    This is **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>**. **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>** is full of unfamiliar things. 
+    See? There’s something on the ground. I bet you can **<red>P</red><orange>I</orange><yellow>C</yellow><green>K</green> <blue>I</blue><indigo>T</indigo> <violet>U</violet><red>P</red>**. 
     Try pressing **K**.
 
 narrator_2: !!message
   trigger: Event
   desc: >
     Spectacular! You picked it up. 
-    My studies of **EARTH** have informed me that the thing you picked up is called a **GUN**. 
-    It is a **WEAPON** used to **HURT THINGS**. 
+    My studies of **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>** have informed me that the thing you picked up is called a **<red>G</red><orange>U</orange><yellow>N</yellow>**. 
+    It is a **<red>W</red><orange></orange><yellow>A</yellow><green>P</green><blue>O</blue><indigo>N</indigo>** used to **<red>H</red><orange>U</orange><yellow>R</yellow><green>T</green> <blue>T</blue><indigo>H</indigo><violet>I</violet><red>N</red><orange>G</orange><yellow>S</yellow>**. 
     Why don’t you give it a go? Press **K**.
 
 narrator_3: !!message
   trigger: Event
   desc: >
     Wonderful! Now why don’t you hold on to that. 
-    My **INSTINCTS** tell me you might need it later.
+    My **<red>I</red><orange>N</orange><yellow>S</yellow><green>T</green><blue>I</blue><indigo>N</indigo><violet>C</violet><red>T</red><orange>S</orange>** tell me you might need it later.
 
 narrator_4: !!message
   trigger: Event
   desc: >
-    **EARTH** is also full of **STRANGE NOOKS AND CRANNIES**. 
+    **<red>E</red><orange>A</orange><yellow>R</yellow><green>T</green><blue>H</blue>** is also full of **<red>S</red><orange>T</orange><yellow>R</yellow><green>A</green><blue>N</blue><indigo>G</indigo><violet>E</violet> <red>N</red><orange>O</orange><yellow>O</yellow><green>K</green><blue>S</blue> <indigo>A</indigo><violet>N</violet><red>D</red> <orange>C</orange><yellow>R</yellow><green>A</green><blue>N</blue><indigo>N</indigo><violet>I</violet><red>E</red><orange>S</orange>**. 
     My studies of **EARTH** have taught me that these are **VERY ANNOYING** for **HUMANS**. 
     But since you are a marshmallow, you should have **NO PROBLEMO**!
     Just **SQUISH YOURSELF**. Press the **DOWN ARROW**.
