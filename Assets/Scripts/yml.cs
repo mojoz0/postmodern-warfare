@@ -161,6 +161,20 @@ public static class yml {
             .Replace("</warn>","</color>")
             .Replace("<cost>","<color=#FFDBBB>")
             .Replace("</cost>","</color>")
+            .Replace("<red>","<color=#ff0000>")
+            .Replace("</red>","</color>")
+            .Replace("<orange>", "<color=#ff9a00>")
+            .Replace("</orange>", "</color>")
+            .Replace("<yellow>", "<color=#f0f218>")
+            .Replace("</yellow>", "</color>")
+            .Replace("<green>", "<color=#00a947>")
+            .Replace("</green>", "</color>")
+            .Replace("<blue>", "<color=#183df2>")
+            .Replace("</blue>", "</color>")
+            .Replace("<indigo>", "<color=#8e18f2")
+            .Replace("</indigo>", "</color>")
+            .Replace("<violet>", "<color=#cc09d8>")
+            .Replace("</violet>", "</color>")
             .ToString();
     }
 
