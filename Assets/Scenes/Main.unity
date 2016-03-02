@@ -162,97 +162,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 25
---- !u!1 &18008479
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 18008483}
-  - 212: {fileID: 18008482}
-  - 50: {fileID: 18008481}
-  - 58: {fileID: 18008480}
-  m_Layer: 0
-  m_Name: FlamingChocoBall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!58 &18008480
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 18008479}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.28
---- !u!50 &18008481
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 18008479}
-  m_UseAutoMass: 1
-  m_Mass: 5.1471853
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!212 &18008482
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 18008479}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 49b611e658efbf443b686a4036f74fe3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
-  m_FlipY: 0
---- !u!4 &18008483
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 18008479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.18, y: 2.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &49032683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1379,7 @@ Transform:
   m_Children:
   - {fileID: 228812689}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &604980804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,6 +1446,38 @@ Prefab:
     - target: {fileID: 431106, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446782, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: deadReplacement
+      value: 
+      objectReference: {fileID: 198256, guid: 8ebbce4e93abc4718802102bad6824a7, type: 2}
+    - target: {fileID: 6127614, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446782, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: chocoBall
+      value: 
+      objectReference: {fileID: 158200, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+    - target: {fileID: 11446782, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 158200, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+    - target: {fileID: 11446782, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: throwStrength
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 21295460, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21295460, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030636, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
@@ -1818,6 +1759,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1001 &906243331
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 71.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417632, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 158200, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+      propertyPath: m_Name
+      value: FlamingChocoBall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 66e43139d012045b1bbed36f95a3cfd3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &949736822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2222,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e281a4dc089145a582607d67240e208, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1207473346 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 108262, guid: 29640a319a7a24cc0ab627b6b86cbbce, type: 2}
+  m_PrefabInternal: {fileID: 629712618}
+--- !u!58 &1207473352
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1207473346}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 15.509979
 --- !u!1 &1259030551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3211,7 +3216,7 @@ Transform:
   m_LocalScale: {x: 179.19998, y: 3.1000092, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
 --- !u!1 &1564436502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,7 +3871,7 @@ Transform:
   m_LocalScale: {x: 21.156715, y: 24.010098, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 45
 --- !u!1 &1744581730
 GameObject:
   m_ObjectHideFlags: 0
