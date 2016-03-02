@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour {
 		IsSquishing = Input.GetButton("Squish");
 		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
 
-		speed = Input.GetAxis("Horizontal");
+		speed = Input.GetAxis("Horizontal")*0.5f;
 	}
 
 
