@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class EventTriggerer2D : MonoBehaviour {
@@ -6,6 +7,8 @@ public class EventTriggerer2D : MonoBehaviour {
 	public MessageTrigger trigger;
 
 	Collider2D coll;
+
+	public UnityEvent m_MessageEvent;
 
 	public float delay;
 
@@ -22,4 +25,22 @@ public class EventTriggerer2D : MonoBehaviour {
 			case MessageTrigger.Time: break;
 		}
 	}
+
+	void Start() {
+		if (m_MessageEvent==null)
+			m_MessageEvent = new UnityEvent();
+		m_MessageEvent.AddListener(OnEvent);
+	}
+
+	void OnCollisionEnter2D(Collision2D c) {
+		if (trigger!=MessageTrigger.Collider) return;
+		m_MessageEvent.Invoke();
+	}
+
+	public void OnEvent() { print("something happened!"); }
 }
+
+
+
+
+
