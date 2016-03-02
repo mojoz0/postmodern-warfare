@@ -5,15 +5,15 @@ using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-class Baddie : MonoBehaviour, IDamageable {
+public class Baddie : MonoBehaviour, IDamageable {
 
 	Rigidbody2D rb2d;
 	BoxCollider2D bc2d;
 
 	public bool isAlive;
 
-	public GameObject explosion;
 	public GameObject deadReplacement;
+	public GameObject explosion;
 
 	public UnityEvent m_ClickEvent;
 

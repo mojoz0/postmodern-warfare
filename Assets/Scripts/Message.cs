@@ -4,8 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using YamlDotNet.Serialization;
 
-public enum MessageTrigger {
-	Default, Time, Event, Collider }
+public enum MessageTrigger { Default, Time, Event, Collider }
 
 public struct Message {
 
@@ -14,6 +13,9 @@ public struct Message {
 
 	[YamlMember(Alias="title")]
 	public string Title {get;set;}
+
+    [YamlMember(Alias="next")]
+    public string Next {get;set;}
 
 	[YamlMember(Alias="desc")]
 	public string Description {get;set;}
