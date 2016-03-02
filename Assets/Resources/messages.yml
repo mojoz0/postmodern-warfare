@@ -19,7 +19,7 @@ init: !!message
     See? There’s something on the ground. I bet you can **<red>P</red><orange>I</orange><yellow>C</yellow><green>K</green> <red>I</red><orange>T</orange> <yellow>U</yellow><green>P</green>**. 
     Try pressing **k** .
 
-narrator_2: !!message
+get_gun: !!message
   trigger: Event
   desc: >
     Spectacular! You picked it up. 
@@ -27,13 +27,13 @@ narrator_2: !!message
     It is a **WEAPON** used to **HURT THINGS**. 
     Why don’t you give it a go? Press **K**.
 
-narrator_3: !!message
+throw_gun: !!message
   trigger: Event
   desc: >
     Wonderful! Now why don’t you hold on to that. 
     My **INSTINCTS** tell me you might need it later.
 
-narrator_4: !!message
+squish: !!message
   trigger: Event
   desc: >
     **EARTH** is also full of **STRANGE NOOKS AND CRANNIES**. 
@@ -41,17 +41,12 @@ narrator_4: !!message
     But since you are a marshmallow, you should have **NO PROBLEMO**!
     Just **SQUISH YOURSELF**. Press the **DOWN ARROW**.
 
-narrator_5: !!message
+stretch: !!message
   trigger: Event
   next: narrator_6
   delay: 10
   desc: |
-    Now you are **VERY SMALL**... **HEIGHTWISE**.
-
-narrator_6: !!message
-  trigger: Time
-  desc: |
-    Try the **UP ARROW**.
+    You have become **VERY SMALL**... **HEIGHTWISE**. Now Try the **UP ARROW**.
 
 narrator_7: !!message
   trigger: Event

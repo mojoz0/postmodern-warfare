@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour {
 		IsSquishing = Input.GetButton("Squish");
 		IsStretching = Input.GetButton("Stretch") && !IsSquishing;
 
-		speed = Input.GetAxis("Horizontal");
+		speed = Input.GetAxis("Horizontal")*0.5f;
 	}
 
 
@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (!HasGun) potentialGun = c.GetComponent<Rigidbody2D>().gameObject;
 	}
 
-	void ThrowGun() {
+	public virtual void ThrowGun() {
 		gun.GetComponent<Gun2D>().IsHeld = false;
 		//var pos = gun.transform.position;
 		gun.transform.parent = null;
@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour {
 			GetGun(potentialGun);
 	}
 
-	void GetGun(GameObject gun) {
+	public virtual void GetGun(GameObject gun) {
 		gun.transform.parent = transform;
 		//gun.transform.localPosition = Vector3.zero;
 		HasGun = true;
